@@ -75,18 +75,27 @@ WSGI_APPLICATION = 'DiabetesPrediction.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-'''DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}'''
+DATABASES = {
+     'default': {
+         'ENGINE': 'sql_server.pyodbc',
+         'NAME': 'frtdatabase',
+         'USER': 'user@frtdbserver',
+         'PASSWORD': 'trial@123',
+         'HOST': 'frtdbserver.database.windows.net',
+         'PORT': '1433',
+         'OPTIONS' : {
+                'driver': '{ODBC Driver 13 for SQL Server}',
+          }
+      }
+ }
+
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': str(BASE_DIR / "db.sqlite3"),
     }
-}
+}'''
 
 
 # Password validation
